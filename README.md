@@ -1,6 +1,6 @@
-# Quasar PWA App
+# NixList
 
-> A Quasar PWA project
+> A Project made with Quasar PWA boilerplate
 
 ## Build Setup
 
