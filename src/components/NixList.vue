@@ -3,15 +3,16 @@
     <h4>Welcome to NixList</h4>
     <h5>Your Unix and Linux Command Resource</h5>
     <ul>
-        <li v-for="command in commands">
+        <li v-for="command in commands" :key="command.title">
             {{ command.title }}
         </li>
     </ul>
-    <q-card v-for="command in commands">
-        <q-card-title>{{ command.title }}</q-card-title>
-        <q-card-separator />
-        <q-card-main>{{ command.description }}</q-card-main>
-    </q-card>
+    <div>
+	<q-card v-for="command in commands" :key="command.title" inline style="width: 500px">
+	    <h3>{{ command.title }}</h3>
+	    <p>{{ command.description }}</p>
+	</q-card>
+    </div>
   </div>
 </template>
 
