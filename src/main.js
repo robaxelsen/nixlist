@@ -13,6 +13,7 @@ require(`quasar/dist/quasar.${__THEME}.css`)
 import Vue from 'vue'
 import Quasar from 'quasar'
 import router from './router'
+import 'quasar-extras/material-icons'
 
 Vue.config.productionTip = false
 Vue.use(Quasar) // Install Quasar Framework
