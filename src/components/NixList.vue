@@ -17,6 +17,7 @@
 <script>
 import { QCard, QBtn, QCardMain, QCollapsible, QIcon, QInput,
     QSearch } from 'quasar'
+import commands from '../assets/data/commands.json'
 export default {
     name: 'nixlist',
     components: {
@@ -30,43 +31,7 @@ export default {
     data() {
         return {
             input: '',
-            commands: [{
-                title: 'awk',
-                description: 'description goes here'
-            },
-            {
-                title: 'cat',
-                description: 'description goes here'
-            },
-            {
-                title: 'cd',
-                description: 'description goes here'
-            },
-            {
-                title: 'grep',
-                description: 'description goes here'
-            },
-            {
-                title: 'ip',
-                description: 'description goes here'
-            },
-            {
-                title: 'ls',
-                description: 'description goes here'
-            },
-            {
-                title: 'sed',
-                description: 'description goes here'
-            },
-            {
-                title: 'tar',
-                description: 'description goes here'
-            },
-            {
-                title: 'top',
-                description: 'description goes here'
-            }
-            ]
+            commands
         }
     },
     methods: {
