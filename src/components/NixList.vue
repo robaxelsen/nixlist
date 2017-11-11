@@ -101,8 +101,6 @@ ul
   list-style-type none
   padding 0
 #search
-    max-width 500px
-    margin 0 auto
-    margin-bottom 60px
     text-align left
+    margin 0 15px 50px 15px
 </style>
