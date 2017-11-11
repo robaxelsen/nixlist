@@ -2,7 +2,8 @@
 <div class="nixlist">
     <h4>NixList</h4>
     <h5>Unix/Linux Commands</h5>
-    <q-input inverted clearable :v-model="input" float-label="Search" id="input" color="primary" :before="[{ icon: 'search' }]" />
+    <q-search :v-model="input" placeholder="Search" id="search" value="">
+    </q-search>
     <q-card v-for="(command, index) in commands" :key="command.title" class="command-card" :id="getId(index)">
         <q-collapsible :label="command.title" class="nix-collapse">
             <ul>
@@ -14,7 +15,8 @@
 </template>
 
 <script>
-import { QCard, QBtn, QCardMain, QCollapsible, QIcon, QInput } from 'quasar'
+import { QCard, QBtn, QCardMain, QCollapsible, QIcon, QInput,
+    QSearch } from 'quasar'
 export default {
     name: 'nixlist',
     components: {
@@ -23,7 +25,7 @@ export default {
         QCardMain,
         QCollapsible,
         QIcon,
-        QInput
+        QSearch
     },
     data() {
         return {
@@ -70,6 +72,9 @@ export default {
     methods: {
         getId(id) {
             return `card-${id}`;
+        },
+        search() {
+            console.log('searching');
         }
     }
 }
@@ -95,7 +100,7 @@ export default {
 ul
   list-style-type none
   padding 0
-#input
+#search
     max-width 500px
     margin 0 auto
     margin-bottom 60px
