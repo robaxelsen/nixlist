@@ -1,26 +1,33 @@
 <template>
 <div class="nixlist">
-<h4>NixList</h4>
-<h5>Unix/Linux Commands</h5>
-<q-card v-for="command in commands" :key="command.title" class="command-card">
-    <q-collapsible icon="star_border" :label="command.title">
-        <ul>
-            <li><strong>Description:</strong> {{ command.description }}</li>
-        </ul>
-    </q-collapsible>
-    <q-card-separator />
-    <q-card-actions align="center">
-        <q-btn flat round small><q-icon name="launch" /></q-btn>
-    </q-card-actions>
-</q-card>
+    <h4>NixList</h4>
+    <h5>Unix/Linux Commands</h5>
+    <q-input inverted clearable :v-model="input" float-label="Search" id="input" color="primary" :before="[{ icon: 'search' }]" />
+    <q-card v-for="(command, index) in commands" :key="command.title" class="command-card" :id="getId(index)">
+        <q-collapsible :label="command.title" class="nix-collapse">
+            <ul>
+                <li><strong>Description:</strong> {{ command.description }}</li>
+            </ul>
+        </q-collapsible>
+    </q-card>
 </div>
 </template>
 
 <script>
-import { QCard, QBtn, QCardMain, QCardTitle, QCardSeparator, QCardActions, QCollapsible, QIcon } from 'quasar'
+import { QCard, QBtn, QCardMain, QCollapsible, QIcon, QInput } from 'quasar'
 export default {
+    name: 'nixlist',
+    components: {
+        QCard,
+        QBtn,
+        QCardMain,
+        QCollapsible,
+        QIcon,
+        QInput
+    },
     data() {
         return {
+            input: '',
             commands: [{
                 title: 'awk',
                 description: 'description goes here'
@@ -60,16 +67,10 @@ export default {
             ]
         }
     },
-    name: 'nixlist',
-    components: {
-        QCard,
-        QBtn,
-        QCardMain,
-        QCardTitle,
-        QCardSeparator,
-        QCardActions,
-        QCollapsible,
-        QIcon
+    methods: {
+        getId(id) {
+            return `card-${id}`;
+        }
     }
 }
 </script>
@@ -79,6 +80,10 @@ export default {
 
 .command-card
   padding 15px
+  .nix-collapse
+    .q-item-label
+        font-size 22px
+        text-align center
 .nixlist
   margin 0 auto
   max-width 1200px
@@ -90,4 +95,9 @@ export default {
 ul
   list-style-type none
   padding 0
+#input
+    max-width 500px
+    margin 0 auto
+    margin-bottom 60px
+    text-align left
 </style>
