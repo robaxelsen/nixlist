@@ -2,14 +2,22 @@
 <div class="nixlist">
     <h4>NixList</h4>
     <h5>Unix/Linux Commands</h5>
-    <q-search inverted autofocus color="primary" v-model="search" placeholder="Search ..." id="search" align="left" />
-    <q-card v-for="(command, index) in filteredItems" :key="command.title" class="command-card" :id="getId(index)">
+    <q-search inverted autofocus color="secondary" v-model="search" placeholder="Search ..." id="search" align="left" />
+    <q-card inverted color="tertiary" v-for="(command, index) in filteredItems" :key="command.title" class="command-card" :id="getId(index)">
         <q-collapsible :label="command.title" class="nix-collapse">
             <ul>
                 <li><strong>Description:</strong> {{ command.description }}</li>
             </ul>
         </q-collapsible>
     </q-card>
+	<q-btn
+		v-back-to-top.animate="{offset: 500, duration: 200}"
+		round
+		color="secondary"
+		class="fixed-bottom-right animate-pop"
+		style="margin: 0 15px 15px 0">
+		<q-icon name="keyboard_arrow_up" />
+    </q-btn>
 </div>
 </template>
 
@@ -71,6 +79,7 @@ export default {
         list-style-type none
         padding 0
     #search
+        height 72px
         margin 0 7px 50px 7px
         font-size 22px
         .q-icon
