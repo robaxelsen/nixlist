@@ -2,9 +2,8 @@
 <div class="nixlist">
     <h4>NixList</h4>
     <h5>Unix/Linux Commands</h5>
-    <q-search inverted color="primary" :v-model="input" placeholder="Search" id="search" value="">
-    </q-search>
-    <q-card v-for="(command, index) in commands" :key="command.title" class="command-card" :id="getId(index)">
+    <q-search inverted autofocus color="primary" v-model="search" placeholder="Search ..." id="search" align="left" />
+    <q-card v-for="(command, index) in filteredItems" :key="command.title" class="command-card" :id="getId(index)">
         <q-collapsible :label="command.title" class="nix-collapse">
             <ul>
                 <li><strong>Description:</strong> {{ command.description }}</li>
@@ -30,16 +29,22 @@ export default {
     },
     data() {
         return {
-            input: '',
+            search: null,
             commands
         }
     },
+	computed: {
+		filteredItems() {
+			let commands = this.commands;
+			if (!this.search) return commands;
+			let searchValue = this.search.toLowerCase();
+			let filter = command => command.title.toLowerCase().includes(searchValue);
+			return commands.filter(filter);
+		}
+	},
     methods: {
         getId(id) {
             return `card-${id}`;
-        },
-        search() {
-            console.log('searching');
         }
     }
 }
@@ -66,7 +71,6 @@ export default {
         list-style-type none
         padding 0
     #search
-        text-align left
         margin 0 7px 50px 7px
         font-size 22px
         .q-icon
