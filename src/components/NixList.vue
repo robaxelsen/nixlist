@@ -1,7 +1,8 @@
 <template>
 <div class="nixlist">
-    <h4>NixList</h4>
-    <h5>Unix/Linux Commands</h5>
+    <div class="nixlist-headline">
+        <img src="../assets/nixlist-logo-512.png" height="100" /><span class="nixlist-h1"> NixList</span>
+    </div>
     <q-search inverted autofocus color="secondary" v-model="search" placeholder="Search ..." id="search" align="left" />
     <q-card inverted color="tertiary" v-for="(command, index) in filteredItems" :key="command.title" class="command-card" :id="getId(index)">
         <q-collapsible :label="command.title" class="nix-collapse">
@@ -61,14 +62,19 @@ export default {
 <style lang="stylus">
 @import '~variables'
 
+
 .nixlist
     margin 0 auto
     max-width 1200px
     margin-top 40px
+    .nixlist-headline
+        margin-bottom 20px
+    .nixlist-h1
+        font-size 90px
+        position relative
+        bottom 20px
     a
         color #35495E
-    h5
-        margin-bottom 50px
     .command-card
       padding 15px
       .nix-collapse
