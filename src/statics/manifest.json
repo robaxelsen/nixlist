@@ -1,6 +1,6 @@
 {
-  "name": "Quasar App",
-  "short_name": "Quasar-PWA",
+  "name": "NixList App",
+  "short_name": "NixList-PWA",
   "icons": [
     {
       "src": "/statics/icons/icon-192x192.png",
@@ -16,5 +16,5 @@
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#027be3"
+  "theme_color": "#383c4a"
 }
