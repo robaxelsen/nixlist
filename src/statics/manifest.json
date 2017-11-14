@@ -1,6 +1,6 @@
 {
   "name": "NixList App",
-  "short_name": "NixList-PWA",
+  "short_name": "NixList",
   "icons": [
     {
       "src": "/statics/icons/icon-192x192.png",
