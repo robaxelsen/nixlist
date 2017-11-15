@@ -1,36 +1,96 @@
 [{
     "title": "awk",
-    "description": "description goes here"
+    "description": "pattern scanning and processing language",
+    "example_1": {
+        "explanation": "explanation",
+        "example": "example"
+    },
+    "example_2": {
+        "explanation": "explanation",
+        "example": "example"
+    }
 },
 {
     "title": "cat",
-    "description": "description goes here"
-},
-{
-    "title": "cd",
-    "description": "description goes here"
+    "description": "concatenate files and print on the standard output",
+    "example_1": {
+        "explanation": "explanation",
+        "example": "example"
+    },
+    "example_2": {
+        "explanation": "explanation",
+        "example": "example"
+    }
 },
 {
     "title": "grep",
-    "description": "description goes here"
+    "description": "print lines matching a pattern",
+    "example_1": {
+        "explanation": "explanation",
+        "example": "example"
+    },
+    "example_2": {
+        "explanation": "explanation",
+        "example": "example"
+    }
 },
 {
     "title": "ip",
-    "description": "description goes here"
+    "description": "show / manipulate routing, devices, policy routing and tunnels",
+    "example_1": {
+        "explanation": "explanation",
+        "example": "example"
+    },
+    "example_2": {
+        "explanation": "explanation",
+        "example": "example"
+    }
 },
 {
     "title": "ls",
-    "description": "description goes here"
+    "description": "list directory contents",
+    "example_1": {
+        "explanation": "explanation",
+        "example": "example"
+    },
+    "example_2": {
+        "explanation": "explanation",
+        "example": "example"
+    }
 },
 {
     "title": "sed",
-    "description": "description goes here"
+    "description": "stream editor for filtering and transforming text",
+    "example_1": {
+        "explanation": "explanation",
+        "example": "example"
+    },
+    "example_2": {
+        "explanation": "explanation",
+        "example": "example"
+    }
 },
 {
     "title": "tar",
-    "description": "description goes here"
+    "description": "an archiving utility",
+    "example_1": {
+        "explanation": "explanation",
+        "example": "example"
+    },
+    "example_2": {
+        "explanation": "explanation",
+        "example": "example"
+    }
 },
 {
     "title": "top",
-    "description": "description goes here"
+    "description": "display Linux processes",
+    "example_1": {
+        "explanation": "explanation",
+        "example": "example"
+    },
+    "example_2": {
+        "explanation": "explanation",
+        "example": "example"
+    }
 }]
